@@ -45,7 +45,7 @@ class OfferCalculatorTest < Minitest::Test
   def test_multiple_offers
     @calculator.add_offer(BuyOneGetOneHalfPrice.new('R01'))
     @calculator.add_offer(BuyOneGetOneHalfPrice.new('G01'))
-    
+
     items = [@red_widget, @red_widget, @green_widget, @green_widget]
     expected_discount = (32.95 * 0.5) + (24.95 * 0.5)
     assert_in_delta expected_discount, @calculator.calculate_discount(items), 0.01
@@ -80,4 +80,4 @@ class BuyOneGetOneHalfPriceTest < Minitest::Test
     expected_discount = 32.95 * 0.5  # Only second one gets discount
     assert_in_delta expected_discount, @offer.calculate_discount(items), 0.01
   end
-end 
+end

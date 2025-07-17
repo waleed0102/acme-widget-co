@@ -10,4 +10,4 @@ class OfferCalculator
   def calculate_discount(items)
     @offers.sum { |offer| offer.calculate_discount(items) }
   end
-end 
+end

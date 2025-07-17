@@ -16,4 +16,4 @@ class DeliveryCalculator
       { threshold: 90, cost: 2.95 }
     ]
   end
-end 
+end

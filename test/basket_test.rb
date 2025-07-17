@@ -12,11 +12,11 @@ class BasketTest < Minitest::Test
     @catalogue.add_product(Product.new('R01', 'Red Widget', 32.95))
     @catalogue.add_product(Product.new('G01', 'Green Widget', 24.95))
     @catalogue.add_product(Product.new('B01', 'Blue Widget', 7.95))
-    
+
     @delivery_calculator = DeliveryCalculator.new
     @offer_calculator = OfferCalculator.new
     @offer_calculator.add_offer(BuyOneGetOneHalfPrice.new('R01'))
-    
+
     @basket = Basket.new(@catalogue, @delivery_calculator, @offer_calculator)
   end
 
@@ -80,8 +80,8 @@ class BasketTest < Minitest::Test
     @basket.add('R01')
     items = @basket.items
     items << Product.new('G01', 'Green Widget', 24.95)
-    
+
     assert_equal 1, @basket.items.length
     assert_equal 2, items.length
   end
-end 
+end

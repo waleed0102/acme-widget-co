@@ -19,4 +19,4 @@ class Product
   def hash
     [code, name, price].hash
   end
-end 
+end

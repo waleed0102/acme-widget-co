@@ -16,4 +16,4 @@ class ProductCatalogue
   def all
     @products.dup
   end
-end 
+end

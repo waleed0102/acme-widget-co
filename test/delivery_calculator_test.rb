@@ -27,9 +27,9 @@ class DeliveryCalculatorTest < Minitest::Test
       { threshold: 75, cost: 3.00 }
     ]
     calculator = DeliveryCalculator.new(custom_rules)
-    
+
     assert_equal 5.00, calculator.calculate_delivery_cost(20.00)
     assert_equal 3.00, calculator.calculate_delivery_cost(50.00)
     assert_equal 0, calculator.calculate_delivery_cost(100.00)
   end
-end 
+end
