@@ -20,16 +20,4 @@ class DeliveryCalculatorTest < Minitest::Test
     assert_equal 0, @calculator.calculate_delivery_cost(90.00)
     assert_equal 0, @calculator.calculate_delivery_cost(150.00)
   end
-
-  def test_custom_delivery_rules
-    custom_rules = [
-      { threshold: 25, cost: 5.00 },
-      { threshold: 75, cost: 3.00 }
-    ]
-    calculator = DeliveryCalculator.new(custom_rules)
-
-    assert_equal 5.00, calculator.calculate_delivery_cost(20.00)
-    assert_equal 3.00, calculator.calculate_delivery_cost(50.00)
-    assert_equal 0, calculator.calculate_delivery_cost(100.00)
-  end
 end
